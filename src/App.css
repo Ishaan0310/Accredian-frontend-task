@@ -1,3 +1,5 @@
+/* App.css */
+
 .App {
   text-align: center;
 }
@@ -35,4 +37,139 @@
   to {
     transform: rotate(360deg);
   }
+}
+body {
+  font-family: 'Roboto', sans-serif;
+}
+.navbar {
+  background-color: white !important;
+  box-shadow: none !important;
+}
+
+.navbar-right {
+  margin-left: auto;
+  
+}
+
+img {
+  display: block;
+}
+
+.MuiIconButton-root {
+  color: black !important;
+}
+
+.login-button {
+  background-color: #d9e8e8;
+}
+
+.hero-section {
+  text-align: center;
+  margin-top: 100px;
+  padding: 50px;
+  border-radius: 10px;
+  background-color: #f0f8ff;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #000;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: #000;
+  padding: 23px;
+  margin-bottom: 20px;
+}
+
+.hero-button {
+  background-color: #1e90ff;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.highlight-text {
+  color: blue;
+}
+
+.contact-expert {
+  background-color: skyblue;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-link {
+  color: blue;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.small-navbar {
+  background-color: white;
+  color: black;
+  margin-left: 600px; 
+  margin-top: 30px;
+  margin-bottom: -40px;
+  padding-left: 20px;
+  border-radius: 20px;
+  width: 25% !important;
+  
+}
+
+.hero-image {
+  text-align: center;
+}
+
+.hero-img {
+  max-width: 100%;
+  height: auto;
+}
+
+.how-to-refer-section {
+  width: 100%;
+  background-color: #EEF5FF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.how-to-refer-title {
+  margin-top: 20px;
+  font-size: 2.5rem;
+}
+
+.how-to-refer-img {
+  width: 80%;
+  max-width: 1387px;
+  height: auto;
+  margin-top: 20px;
+}
+
+.referral-benefits-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.referral-benefits-title {
+  margin-top: 20px;
+  font-size: 2.5rem;
+}
+
+.referral-benefits-img {
+  width: 70%;
+  height: auto;
+  margin-top: 20px;
 }
