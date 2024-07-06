@@ -2,10 +2,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const { PrismaClient } = require('@prisma/client');
 const nodemailer = require('nodemailer');
+const cors = require('cors');
 
 const prisma = new PrismaClient();
 const app = express();
 
+app.use(cors());
 app.use(bodyParser.json());
 
 app.post('/api/referrals', async (req, res) => {
@@ -26,13 +28,13 @@ app.post('/api/referrals', async (req, res) => {
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'your-email@gmail.com',
-        pass: 'your-email-password'
+        user: process.env.GMAIL_USER,
+        pass: process.env.GMAIL_PASS
       }
     });
 
     const mailOptions = {
-      from: 'your-email@gmail.com',
+      from: process.env.GMAIL_USER,
       to: refereeEmail,
       subject: 'Course Referral',
       text: `You have been referred to the ${course} course by ${referrerName}.`
@@ -40,7 +42,8 @@ app.post('/api/referrals', async (req, res) => {
 
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
-        console.log(error);
+        console.log('Email error: ', error);
+        return res.status(500).json({ error: 'Email sending failed' });
       } else {
         console.log('Email sent: ' + info.response);
       }
@@ -48,6 +51,7 @@ app.post('/api/referrals', async (req, res) => {
 
     res.json(referral);
   } catch (error) {
+    console.error('Server error: ', error);
     res.status(500).json({ error: 'Internal server error' });
   }
 });

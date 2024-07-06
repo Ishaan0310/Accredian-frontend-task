@@ -49,8 +49,10 @@ const App = () => {
       setOpen(false);
     } catch (error) {
       console.error('Error submitting referral:', error);
+      alert('There was an error submitting your referral. Please try again.');
     }
   };
+  
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -235,21 +237,33 @@ const App = () => {
 
       <Container maxWidth="md" style={{ textAlign: 'center', marginTop: '100px' }}>
         <Typography variant="h4">
-          Frequently Asked <span style={{ color: '#1A73E8' }}>Question</span>
+          Frequently Asked <span style={{ color: '#1A73E8' }}>Questions</span>
         </Typography>
       </Container>
       <div style={{ marginTop: '80px' }}>
-        <img src={thirdimg} alt="Referral Benefits" className="referral-benefits-img" style={{ paddingLeft: '240px' }} />
+        <img src={thirdimg} alt="Referral Benefits" className="frequent-img" />
       </div>
-      <div style={{ marginTop: '100px', marginBottom: '100px' }}>
-        <img src={fourth} alt="Example Image" style={{ paddingLeft: '80px' }} />
+      <Container maxWidth="md" style={{ textAlign: 'center', marginTop: '100px' }}>
+        <Typography variant="h4">
+          Terms and <span style={{ color: '#1A73E8' }}>Conditions</span>
+        </Typography>
+      </Container>
+      <div style={{ marginTop: '80px' }}>
+        <img src={fourth} alt="Terms and Conditions" className="frequent-img" />
       </div>
-      <div style={{ marginTop: '20px' }}>
-        <img src={lastest} alt="Full Page Image" />
+      <Container maxWidth="md" style={{ textAlign: 'center', marginTop: '100px' }}>
+        <Typography variant="h4">
+          Terms and <span style={{ color: '#1A73E8' }}>Conditions</span>
+        </Typography>
+      </Container>
+      <div style={{ marginTop: '80px' }}>
+        <img src={lastest} alt="Terms and Conditions" className="frequent-img" />
       </div>
     </>
   );
-};
+}
+
+
 
 const style = {
   position: 'absolute',
